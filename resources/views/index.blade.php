@@ -6,7 +6,10 @@
 
         <title>Laravel</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.maskedinput.min.js"></script>
+        <script src="/js/inputmask.js"></script>
     </head>
     <body>
 
@@ -27,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Почта</label>
-                            <input type="email" name="email"  value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" name="email" value="{{old('email')}}" class=" form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                             @error('email')
                                 <div class="invalid-feedback">
                                 Заполните поле email
@@ -54,10 +57,10 @@
             </div>
         </div>
 
-<script>
-    $('.mask-phone').mask('+7 (999) 999-99-99');
-</script>
-
+    <script>
+        $.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]"
+        $(".mask-phone").mask("+7 (h99) 999-99-99")
+    </script>
 </body>
 </html>
    
