@@ -9,8 +9,8 @@ class FeedbackController extends Controller
     public function handler(Request $request)
     {
         $validated = $request->validate([
-           // 'name' => 'required',
-            //'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
+            'name' => 'required',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
             'phone' => 'required',
         ]);
 
